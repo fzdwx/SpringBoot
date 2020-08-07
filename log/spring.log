@@ -1,0 +1,159 @@
+2020-08-06 10:46:25.614  INFO 2136 --- [main] lk.ApplicationTest                       : Starting ApplicationTest on LikePc with PID 2136 (started by pdd20 in D:\Java\project\SpringBoot)
+2020-08-06 10:46:25.623  INFO 2136 --- [main] lk.ApplicationTest                       : No active profile set, falling back to default profiles: default
+2020-08-06 10:46:27.429  INFO 2136 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-06 10:46:27.551  INFO 2136 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-06 10:46:27.859  INFO 2136 --- [main] lk.ApplicationTest                       : Started ApplicationTest in 2.771 seconds (JVM running for 3.841)
+2020-08-06 10:46:27.937 ERROR 2136 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@799f10e1] to prepare test instance [lk.ApplicationTest@1bcf67e8]
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lk.ApplicationTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'lk.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:321) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:392) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.3.2.RELEASE.jar:2.3.2.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.jar:4.13]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) [junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220) [junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53) [junit-rt.jar:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'lk.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:521) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:239) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	... 27 common frames omitted
+
+2020-08-06 10:46:27.971  INFO 2136 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-06 10:47:13.113  INFO 8080 --- [main] lk.ApplicationTest                       : Starting ApplicationTest on LikePc with PID 8080 (started by pdd20 in D:\Java\project\SpringBoot)
+2020-08-06 10:47:13.116  INFO 8080 --- [main] lk.ApplicationTest                       : No active profile set, falling back to default profiles: default
+2020-08-06 10:47:14.392  INFO 8080 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-06 10:47:14.504  INFO 8080 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-06 10:47:14.742  INFO 8080 --- [main] lk.ApplicationTest                       : Started ApplicationTest in 2.021 seconds (JVM running for 2.967)
+2020-08-06 10:47:14.779 ERROR 8080 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@799f10e1] to prepare test instance [lk.ApplicationTest@6b587673]
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lk.ApplicationTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'lk.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:321) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:392) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.3.2.RELEASE.jar:2.3.2.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.jar:4.13]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) [junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220) [junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53) [junit-rt.jar:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'lk.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:521) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:239) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	... 27 common frames omitted
+
+2020-08-06 10:47:14.792  INFO 8080 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-06 10:47:51.133  INFO 10316 --- [main] lk.ApplicationTest                       : Starting ApplicationTest on LikePc with PID 10316 (started by pdd20 in D:\Java\project\SpringBoot)
+2020-08-06 10:47:51.136  INFO 10316 --- [main] lk.ApplicationTest                       : No active profile set, falling back to default profiles: default
+2020-08-06 10:47:52.296  INFO 10316 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-06 10:47:52.380  INFO 10316 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-06 10:47:52.571  INFO 10316 --- [main] lk.ApplicationTest                       : Started ApplicationTest in 1.762 seconds (JVM running for 2.798)
+2020-08-06 10:47:52.611 ERROR 10316 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@799f10e1] to prepare test instance [lk.ApplicationTest@6b587673]
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lk.ApplicationTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'lk.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:321) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:392) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.3.2.RELEASE.jar:2.3.2.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.jar:4.13]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) [junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220) [junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53) [junit-rt.jar:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'lk.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1717) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1273) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:521) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:239) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	... 27 common frames omitted
+
+2020-08-06 10:47:52.621  INFO 10316 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-06 10:48:11.563  INFO 5992 --- [main] lk.ApplicationTest                       : Starting ApplicationTest on LikePc with PID 5992 (started by pdd20 in D:\Java\project\SpringBoot)
+2020-08-06 10:48:11.565  INFO 5992 --- [main] lk.ApplicationTest                       : No active profile set, falling back to default profiles: default
+2020-08-06 10:48:12.939  INFO 5992 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-06 10:48:13.029  INFO 5992 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-06 10:48:13.283  INFO 5992 --- [main] lk.ApplicationTest                       : Started ApplicationTest in 2.073 seconds (JVM running for 2.886)
+2020-08-06 10:48:13.461  INFO 5992 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-06 11:26:46.872  INFO 15052 --- [main] lk.ApplicationTest                       : Starting ApplicationTest on LikePc with PID 15052 (started by pdd20 in D:\Java\project\SpringBoot)
+2020-08-06 11:26:46.873  INFO 15052 --- [main] lk.ApplicationTest                       : No active profile set, falling back to default profiles: default
+2020-08-06 11:26:48.640  INFO 15052 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-06 11:26:48.766  INFO 15052 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-06 11:26:49.101  INFO 15052 --- [main] lk.ApplicationTest                       : Started ApplicationTest in 2.572 seconds (JVM running for 3.772)
+2020-08-06 11:26:49.387  INFO 15052 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

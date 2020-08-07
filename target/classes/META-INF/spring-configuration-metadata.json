@@ -1,0 +1,23 @@
+{
+  "groups": [
+    {
+      "name": "user",
+      "type": "lk.pojo.User",
+      "sourceType": "lk.pojo.User"
+    }
+  ],
+  "properties": [
+    {
+      "name": "user.age",
+      "type": "java.lang.Integer",
+      "sourceType": "lk.pojo.User",
+      "defaultValue": 0
+    },
+    {
+      "name": "user.my-name",
+      "type": "java.lang.String",
+      "sourceType": "lk.pojo.User"
+    }
+  ],
+  "hints": []
+}

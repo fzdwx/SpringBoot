@@ -1,6 +1,12 @@
 {
   "groups": [
     {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "lk.config.DruidConfig",
+      "sourceMethod": "druid()"
+    },
+    {
       "name": "user",
       "type": "lk.pojo.User",
       "sourceType": "lk.pojo.User"

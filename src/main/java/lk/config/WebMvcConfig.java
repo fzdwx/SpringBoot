@@ -11,12 +11,13 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
+ * Web服务器相关的配置类
  * @author likeLove
  * @time 2020-08-04  16:00
  */
 
 @Configuration
-public class MyConfig implements WebMvcConfigurer {
+public class WebMvcConfig implements WebMvcConfigurer {
 
     /**
      * 添加视图解析器

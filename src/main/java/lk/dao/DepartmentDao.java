@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+/**
+ * @author pdd20
+ */
 @Repository
 public class DepartmentDao {
 
@@ -30,5 +33,6 @@ public class DepartmentDao {
     public Department getDepartment(Integer id) {
         return departments.get(id);
     }
+
 
 }

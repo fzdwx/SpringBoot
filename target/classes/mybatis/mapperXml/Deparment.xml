@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "lk.dao.DepartmentMapper">
+    
+    <update id = "updateDep"> update department set departmentName = #{departmentName} where id = #{id} </update>
+    
+    <select id = "getDepById" resultType = "lk.pojo.Department">select * from department where id = #{id};</select>
+    
+    <delete id = "delDepById">delete from department where id = #{id}</delete>
+    
+    <insert id = "insertDep"> insert into department(departmentName)  values(#{departmentName})</insert>
+
+</mapper>

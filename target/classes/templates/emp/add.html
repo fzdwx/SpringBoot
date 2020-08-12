@@ -53,31 +53,37 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <!--添加表单-->
             <form th:action="@{/emp}" method="post">
+                <!--id,不需要，数据库自增-->
+
                 <!--姓名-->
                 <div class="form-group">
                     <label for="lastName">LastName</label>
                     <input type="text" class="form-control" id="lastName" name="lastName"
-                           placeholder="like">
+                           placeholder="xxxxx">
                 </div>
                 <!--邮箱-->
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Email</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" name="email"
-                           placeholder="name@example.com">
+                           placeholder="xxxxx@example.com">
                 </div>
                 <!--性别-->
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Gender</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="gender">
-                        <option>0</option>
-                        <option>1</option>
-                    </select>
+                    <label>Gender</label>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="gender" value="1">
+                        <label class="form-check-label">男</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="gender" value="1">
+                        <label class="form-check-label" > 女</label>
+                    </div>
                 </div>
                 <!--部门编号-->
                 <div class="form-group">
                     <label for="department">DepartmentID</label>
                     <select multiple class="form-control" id="department" name="department.id">
-                        <option th:value="${dept.id}" th:each="dept:${depts}" th:text="${dept.departmentName}"></option>
+                        <option th:value="${dept.id}" th:each="dept:${list}" th:text="${dept.departmentName}"></option>
                     </select>
                 </div>
                 <!--生日-->

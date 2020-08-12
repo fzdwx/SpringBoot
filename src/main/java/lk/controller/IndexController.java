@@ -2,6 +2,7 @@ package lk.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -12,8 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class IndexController {
     @ResponseBody
     @RequestMapping ("/hello")
-    public String hello() {
-        return "hello world";
+    public String hello(@RequestParam String user) {
+        if (user.equals("a") ) {
+            throw new IndexOutOfBoundsException("用户不存在");
+        }
+        return "HelloApplicationContextInitializer world";
     }
 
     @RequestMapping ("/index")

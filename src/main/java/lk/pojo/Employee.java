@@ -1,15 +1,16 @@
 package lk.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Employee {
+public class Employee implements Serializable {
 
     private Integer id;
     private String lastName;
     private String email;
     //1 male, 0 female
     private Integer gender;
-    private Department department;
+    private int dId;
     private Date birth;
 
     public Integer getId() {
@@ -44,12 +45,12 @@ public class Employee {
         this.gender = gender;
     }
 
-    public Department getDepartment() {
-        return department;
+    public int getDId() {
+        return dId;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDid(int dId) {
+        this.dId = dId;
     }
 
     public Date getBirth() {
@@ -60,14 +61,13 @@ public class Employee {
         this.birth = birth;
     }
 
-    public Employee(Integer id, String lastName, String email, Integer gender,
-                    Department department) {
+    public Employee(Integer id, String lastName, String email, Integer gender, int dId) {
         super();
         this.id = id;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
-        this.department = department;
+        this.dId = dId;
         this.birth = new Date();
     }
 
@@ -76,14 +76,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", gender=" + gender +
-                ", department=" + department +
-                ", birth=" + birth +
-                '}';
+        return "Employee{" + "id=" + id + ", lastName='" + lastName + '\'' + ", email='" + email + '\'' + ", gender=" + gender + ", dId=" + dId + ", birth=" + birth + '}';
     }
 
 

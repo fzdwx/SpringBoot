@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace = "lk.dao.EmployeeMapper">
   
-<select id = "getAll" resultType = "lk.pojo.Employee"> select * from employee </select></mapper>
+	<select id = "getAll" resultType = "lk.pojo.Employee"> select * from employee </select>
+	
+	<select id = "get" resultType = "lk.pojo.Employee">select * from employee where id =#{id}</select>
+	<update id = "update" parameterType="lk.pojo.Employee">
+ 		UPDATE employee SET lastName =#{lastName},email=#{email},gender=#{gender},birth=#{birth},d_id=#{dId} WHERE id=#{id}
+ 	</update>
+	<delete id = "delete" parameterType="int">DELETE FROM employee WHERE id=#{id}</delete>
+	<insert id = "insert"> insert into employee(lastName, email, gender, d_id, birth)
+			VALUES (#{lastName}, #{email}, #{gender},#{dId},#{birth})
+	</insert>
+</mapper>

@@ -3,10 +3,9 @@ D:\Java\project\SpringBoot\src\main\java\lk\controller\IndexController.java
 D:\Java\project\SpringBoot\src\main\java\lk\service\UserService.java
 D:\Java\project\SpringBoot\src\main\java\lk\controller\DepartmentController.java
 D:\Java\project\SpringBoot\src\main\java\lk\component\MyLocaleResolver.java
-D:\Java\project\SpringBoot\src\main\java\lk\dao\EmployeeDao.java
 D:\Java\project\SpringBoot\src\main\java\lk\pojo\Department.java
 D:\Java\project\SpringBoot\src\main\java\lk\controller\EmployeeController.java
-D:\Java\project\SpringBoot\src\main\java\lk\Application.java
+D:\Java\project\SpringBoot\src\main\java\lk\SpringBoot.java
 D:\Java\project\SpringBoot\src\main\java\lk\pojo\User.java
 D:\Java\project\SpringBoot\src\main\java\lk\pojo\Employee.java
 D:\Java\project\SpringBoot\src\main\java\lk\component\LoginHandlerInterceptor.java
@@ -14,4 +13,3 @@ D:\Java\project\SpringBoot\src\main\java\lk\config\WebMvcConfig.java
 D:\Java\project\SpringBoot\src\main\java\lk\dao\DepartmentMapper.java
 D:\Java\project\SpringBoot\src\main\java\lk\dao\EmployeeMapper.java
 D:\Java\project\SpringBoot\src\main\java\lk\config\DruidConfig.java
-D:\Java\project\SpringBoot\src\main\java\lk\dao\DepartmentDao.java

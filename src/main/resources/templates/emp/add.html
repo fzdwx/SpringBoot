@@ -81,8 +81,8 @@
                 </div>
                 <!--部门编号-->
                 <div class="form-group">
-                    <label for="department">DepartmentID</label>
-                    <select multiple class="form-control" id="department" name="department.id">
+                    <label for="dId">DepartmentID</label>
+                    <select multiple class="form-control" id="Did" name="Did">
                         <option th:value="${dept.id}" th:each="dept:${list}" th:text="${dept.departmentName}"></option>
                     </select>
                 </div>

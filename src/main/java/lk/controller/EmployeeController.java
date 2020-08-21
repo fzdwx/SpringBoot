@@ -1,7 +1,7 @@
 package lk.controller;
 
-import lk.dao.DepartmentDao;
-import lk.dao.EmployeeDao;
+import lk.dao.DepartmentMapper;
+import lk.dao.EmployeeMapper;
 import lk.pojo.Department;
 import lk.pojo.Employee;
 import org.springframework.stereotype.Controller;
@@ -17,20 +17,17 @@ import java.util.Collection;
 @Controller
 @RequestMapping ("/emp")
 public class EmployeeController {
-    final
-    EmployeeDao employeeDao;
-    final
-    DepartmentDao department;
-
-    public EmployeeController(EmployeeDao employeeDao, DepartmentDao department) {
-        this.employeeDao = employeeDao;
-        this.department = department;
+    private DepartmentMapper departmentMapper;
+    private EmployeeMapper employeeMapper;
+    public EmployeeController(DepartmentMapper departmentMapper, EmployeeMapper employeeMapper) {
+        this.departmentMapper = departmentMapper;
+        this.employeeMapper = employeeMapper;
     }
 
     //获取员工列表
     @GetMapping ("/emps")
     public String list(Model model) {
-        Collection<Employee> list = employeeDao.getAll();
+        Collection<Employee> list = employeeMapper.getAll();
         model.addAttribute("list", list);
         return "emp/list";
     }
@@ -39,7 +36,7 @@ public class EmployeeController {
     @GetMapping ("")
     public String toAddPage(Model model) {
         //获取员工部门信息
-        Collection<Department> list = department.getDepartments();
+        Collection<Department> list = departmentMapper.getAll();
         model.addAttribute("list", list);
         return "emp/add";
     }
@@ -48,7 +45,7 @@ public class EmployeeController {
     @PostMapping ("")
     public String addEmp(Employee employee) {
         System.out.println(employee);
-        employeeDao.save(employee);
+        employeeMapper.insert(employee);
         return "redirect:/emp/emps";
     }
 
@@ -56,10 +53,10 @@ public class EmployeeController {
     @GetMapping ("/{id}")
     public String toEditPage(@PathVariable ("id") Integer id, Model model) {
         //获取员工信息
-        Employee employee = employeeDao.get(id);
+        Employee employee = employeeMapper.get(id);
         model.addAttribute("emp", employee);
         //获取员工部门信息
-        Collection<Department> list = department.getDepartments();
+        Collection<Department> list = departmentMapper.getAll();
         model.addAttribute("list", list);
         return "emp/edit";
     }
@@ -68,14 +65,14 @@ public class EmployeeController {
     @PutMapping ("")
     public String editEmp(Employee employee) {
         System.out.println("正在修改:" + employee);
-        employeeDao.save(employee);
+        employeeMapper.update(employee);
         return "redirect:/emp/emps";
     }
 
     //删除员工，重定向到获取员工列表请求
     @DeleteMapping ("/{id}")
     public String delEmp(@PathVariable Integer id) {
-        employeeDao.delete(id);
+        employeeMapper.delete(id);
         return "redirect:/emp/emps";
     }
 }

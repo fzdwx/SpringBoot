@@ -76,16 +76,16 @@
                         <label class="form-check-label">男</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" name="gender" value="1" th:checked="${emp.gender ==0}">
+                        <input type="radio" class="form-check-input" name="gender" value="0" th:checked="${emp.gender ==0}">
                         <label class="form-check-label">女</label>
                     </div>
                 </div>
                 <!--部门编号-->
                 <div class="form-group">
                     <label for="department">DepartmentID</label>
-                    <select multiple class="form-control" id="department" name="department.id">
+                    <select multiple class="form-control" id="department" name="Did">
                         <option th:value="${dept.id}" th:each="dept:${list}" th:text="${dept.departmentName}"
-                                th:selected="${emp.department.id}==${dept.id}"></option>
+                                th:selected="${emp.DId}==${dept.id}"></option>
                     </select>
                 </div>
                 <!--生日-->

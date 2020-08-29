@@ -1,4 +1,3 @@
-```properties
 [toc]
 
 # 一、Spirng Boot 入门
@@ -209,13 +208,13 @@ public @interface SpringBootConfiguration {
 
 >   ==在配置类上标注这个注解==
 
-​```java
+```java
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
 public @interface Configuration {
-​```
+```
 
 >   有==@Component==，表示配置类也是spring容器中的一个组件
 
@@ -240,10 +239,10 @@ public @interface Configuration {
 >   		if (!isEnabled(annotationMetadata)) {
 >   			return NO_IMPORTS;
 >   		}
->      
+>       
 >   //获取自动配置条目
 >   		AutoConfigurationEntry autoConfigurationEntry = getAutoConfigurationEntry(annotationMetadata);
->      
+>       
 >   		return StringUtils.toStringArray(autoConfigurationEntry.getConfigurations());
 >   	}
 >   ~~~
@@ -261,7 +260,7 @@ public @interface Configuration {
 >   		}
 >   		AnnotationAttributes attributes = getAttributes(annotationMetadata);
 >   //获取候选的配置		
->      List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes);
+>       List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes);
 >   		configurations = removeDuplicates(configurations);
 >   		Set<String> exclusions = getExclusions(annotationMetadata, attributes);
 >   		checkExcludedClasses(configurations, exclusions);
@@ -282,10 +281,10 @@ public @interface Configuration {
 >
 >   ~~~java
 >   protected List<String> getCandidateConfigurations(AnnotationMetadata metadata, AnnotationAttributes attributes) {
->      
+>       
 >   		List<String> configurations = SpringFactoriesLoader.loadFactoryNames(getSpringFactoriesLoaderFactoryClass(),
 >   				getBeanClassLoader());
->      
+>       
 >   		Assert.notEmpty(configurations, "No auto configuration classes found in META-INF/spring.factories. If you "
 >   				+ "are using a custom packaging, make sure that file is correct.");
 >   		return configurations;
@@ -532,9 +531,9 @@ protected Class<?> getSpringFactoriesLoaderFactoryClass() {
 
 ==从这些资源中遍历了URL url = urls.nextElement();最后封装成了一个Properties 供我们使用==
 
-​```
+```
 Properties properties = PropertiesLoaderUtils.loadProperties(resource);
-​```
+```
 
 
 
@@ -546,9 +545,9 @@ META-INF/spring.factories.自动配置的核心文件：
 
 
 
-​```java
+```java
 @ConditionalOnClass({ JdbcTemplate.class, PlatformTransactionManager.class })
-​```
+```
 
 
 
@@ -596,12 +595,12 @@ springboot的所有自动配置都是在启动的时候扫描并加载，==META-
 
 ## 1.导入依赖：
 
-​```xml
+```xml
 <dependency>
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-configuration-processor</artifactId>
 </dependency>
-​```
+```
 
 
 
@@ -797,13 +796,13 @@ protected List<String> getCandidateConfigurations(AnnotationMetadata metadata, A
 
 FactoriesLoaderFactoryClass(),getBeanClassLoader());
 
-​```java
+```java
 //返回标注了@EnableAutoConfiguration注解的类
 protected Class<?> getSpringFactoriesLoaderFactoryClass() {
    return EnableAutoConfiguration.class;
 }
 
-​```
+```
 
  		获取META-INF/spring.factories中的所有自动配置类到容器中
 
@@ -932,16 +931,16 @@ favicon.ico是显示在网页上的图标
 
 ### 	a.依赖
 
-​```xml
+```xml
 <dependency><!--thymeleaf-->
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
-​```
+```
 
 ### 	b.使用：
 
-​```java
+```java
 @ConfigurationProperties(prefix = "spring.thymeleaf")
 public class ThymeleafProperties {
 
@@ -950,7 +949,7 @@ public class ThymeleafProperties {
    public static final String DEFAULT_PREFIX = "classpath:/templates/";
 
    public static final String DEFAULT_SUFFIX = ".html";
-​```
+```
 
 >   放入classpath:/templates/中，结尾是.html就能自动渲染
 
@@ -970,19 +969,19 @@ public class ThymeleafProperties {
 
 网页
 
-​```html
+```html
 <div th:text="${hello}">我草你的</div>
-​```
+```
 
 controller
 
-​```java
+```java
 @RequestMapping ("/success")
 public String success(Model model) {
     model.addAttribute("hello","hello world");
     return "success";
 }
-​```
+```
 
 
 
@@ -1173,7 +1172,7 @@ public LocaleResolver localeResolver() {
 >
 >   
 
-​```java
+```java
 @Component
 public class MyLocaleResolver implements LocaleResolver {
 
@@ -1193,7 +1192,7 @@ public class MyLocaleResolver implements LocaleResolver {
 
     }
 }
-​```
+```
 
 注册在自己的配置类中：
 
@@ -1271,7 +1270,7 @@ public void addInterceptors(InterceptorRegistry registry) {
 
 >   判断请求中是否有用户
 
-​```java
+```java
 @Controller
 @RequestMapping ("/user")
 public class UserController {
@@ -1289,7 +1288,7 @@ public class UserController {
         }
     }
 }
-​```
+```
 
 在自己的视图解析器中添加main.html
 
@@ -1371,10 +1370,10 @@ public String list(Model model) {
 
 ### 	a.在list页面添加按钮
 
-​```html
+```html
 <!--员工添加按钮-->
 <h2><a th:href="@{/emp}" class="btn  btn-sm btn-success">员工添加</a></h2>
-​```
+```
 
 ![image-20200806190842293](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20200829130938.png)
 
@@ -1384,7 +1383,7 @@ public String list(Model model) {
 
 
 
-​```java
+```java
 //去添加页面
 @GetMapping ("")
 public String toAddPage(Model model) {
@@ -1400,7 +1399,7 @@ public String addEmp(Employee employee) {
     employeeDao.save(employee);
     return "redirect:/emp/emps";
 }
-​```
+```
 
 
 
@@ -1464,7 +1463,7 @@ public String editEmp(Employee employee) {
 
 ### 	b.修改页面
 
-​```html
+```html
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <!--修改表单-->
     <form th:action="@{/emp}" th:method="put">
@@ -1512,7 +1511,7 @@ public String editEmp(Employee employee) {
         <input type="submit" value="修改" class="btn btn-primary">
     </form>
 </main>
-​```
+```
 
 
 
@@ -1522,20 +1521,20 @@ public String editEmp(Employee employee) {
 
 ### 	a.添加controller方法
 
-​```java
+```java
 //删除员工，重定向到获取员工列表请求
 @DeleteMapping ("/{id}")
 public String delEmp(@PathVariable Integer id) {
     employeeDao.delete(id);
     return "redirect:/emp/emps";
 }
-​```
+```
 
 
 
 ### 	b.给按钮绑定删除事件
 
-​```html
+```html
 <button th:attr="uri=@{/emp/}+${emp.id}" type="submit" class="btn-sm btn-danger" id="delBtn">删除</button>
 
 <!--删除-->
@@ -1545,7 +1544,7 @@ public String delEmp(@PathVariable Integer id) {
         return false;
     });
 </script>
-​```
+```
 
 
 
@@ -1823,14 +1822,14 @@ public String delEmp(@PathVariable Integer id) {
 
 ​	b.客户端：会返回一个json数据
 
-​```js
+```js
 {    
     "timestamp":"2020-08-07T05:41:14.123+00:00",
     "status":404,
     "error":"Not Found",
     "message":"No message available","path":"/s"
 }
-​```
+```
 
 原因：
 
@@ -1973,12 +1972,12 @@ public String delEmp(@PathVariable Integer id) {
 
 ![image-20200807143037494](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20200829130957.png)
 
-​```html
+```html
 <h1>status:[[${status}]]</h1>
 <h2>timestamp:[[${timestamp}]]</h2>
 <h2>type:[[${error}]]</h2>
 <h2>message:[[${message}]]</h2>
-​```
+```
 
 
 
@@ -1994,7 +1993,7 @@ public String delEmp(@PathVariable Integer id) {
 
 自定义ErrorAttributes
 
-​```java
+```java
 //给容器中加入我们自己定义的ErrorAttributes
 @Component
 public class MyErrorAttributes extends DefaultErrorAttributes {
@@ -2006,7 +2005,7 @@ public class MyErrorAttributes extends DefaultErrorAttributes {
         return map;
     }
 }
-​```
+```
 
 最终的效果：响应是自适应的，可以通过定制ErrorAttributes改变需要返回的内容，
 
@@ -2022,7 +2021,7 @@ public class MyErrorAttributes extends DefaultErrorAttributes {
 
 ServletRegistrationBean
 
-​```java
+```java
 //注册三大组件
 @Bean
 public ServletRegistrationBean myServlet(){
@@ -2030,11 +2029,11 @@ public ServletRegistrationBean myServlet(){
     return registrationBean;
 }
 
-​```
+```
 
 FilterRegistrationBean
 
-​```java
+```java
 @Bean
 public FilterRegistrationBean myFilter(){
     FilterRegistrationBean registrationBean = new FilterRegistrationBean();
@@ -2042,17 +2041,17 @@ public FilterRegistrationBean myFilter(){
     registrationBean.setUrlPatterns(Arrays.asList("/hello","/myServlet"));
     return registrationBean;
 }
-​```
+```
 
 ServletListenerRegistrationBean
 
-​```java
+```java
 @Bean
 public ServletListenerRegistrationBean myListener(){
     ServletListenerRegistrationBean<MyListener> registrationBean = new ServletListenerRegistrationBean<>(new MyListener());
     return registrationBean;
 }
-​```
+```
 
 
 
@@ -2064,7 +2063,7 @@ public ServletListenerRegistrationBean myListener(){
 
 
 
-​```xml
+```xml
 <dependency><!--jdbc-->
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -2073,7 +2072,7 @@ public ServletListenerRegistrationBean myListener(){
    <groupId>mysql</groupId>
    <artifactId>mysql-connector-java</artifactId>
 </dependency>
-​```
+```
 
 
 
@@ -2081,13 +2080,13 @@ public ServletListenerRegistrationBean myListener(){
 
 连接docker虚拟机上面的
 
-​```properties
+```properties
 #配置数据库
 spring.datasource.username=root
 spring.datasource.password=root
 spring.datasource.url=jdbc:mysql://192.168.76.10:3306/jdbc
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-​```
+```
 
 
 
@@ -2103,7 +2102,7 @@ DataSourceConfiguration.class：
 
 >   利用反射创建响应type的数据源，并且绑定相关属性
 
-​```java
+```java
 /**
  * Generic DataSource configuration.
  */
@@ -2127,7 +2126,7 @@ public T build() {
     bind(result);
     return (T) result;
 }
-​```
+```
 
 
 
@@ -2137,7 +2136,7 @@ DataSourceInitializerInvoker.afterPropertiesSet()
 
 
 
-​```java
+```java
 @Override
 public void afterPropertiesSet() {
    DataSourceInitializer initializer = getDataSourceInitializer();
@@ -2149,16 +2148,16 @@ public void afterPropertiesSet() {
       }
    }
 }
-​```
+```
 
 DataSourceInitializer.createSchema()
 
 >   获取 fallbackResources.add("classpath*:" + fallback + "-" + platform + ".sql");
->     			 fallbackResources.add("classpath*:" + fallback + ".sql");
+>      			 fallbackResources.add("classpath*:" + fallback + ".sql");
 >
 >   下的sql文件并运行
 
-​```java
+```java
 boolean createSchema() {
     //获取sql文件
     List<Resource> scripts = getScripts("spring.datasource.schema", this.properties.getSchema(), "schema");
@@ -2208,7 +2207,7 @@ private void runScripts(List<Resource> resources, String username, String passwo
    }
    DatabasePopulatorUtils.execute(populator, dataSource);
 }
-​```
+```
 
 
 
@@ -2216,19 +2215,19 @@ private void runScripts(List<Resource> resources, String username, String passwo
 
 ### 	a.依赖：
 
-​```xml
+```xml
 <dependency>
     <groupId>com.alibaba</groupId>
     <artifactId>druid</artifactId>
     <version>1.1.23</version>
 </dependency>
-​```
+```
 
 
 
 ### 	b.配置
 
-​```java
+```java
 @Configuration
 public class DruidConfig {
 
@@ -2269,7 +2268,7 @@ public class DruidConfig {
         return bean;
     }
 }
-​```
+```
 
 
 
@@ -2279,19 +2278,19 @@ public class DruidConfig {
 
 ### 	a.依赖
 
-​```xml
+```xml
 <dependency>  <!--mybatis-->
    <groupId>org.mybatis.spring.boot</groupId>
    <artifactId>mybatis-spring-boot-starter</artifactId>
    <version>1.3.1</version>
 </dependency>
-​```
+```
 
 
 
 ### 	b.mapper.interface
 
-​```java
+```java
 @Mapper
 @Repository
 public interface DepartmentMapper {
@@ -2300,13 +2299,13 @@ public interface DepartmentMapper {
     public boolean insertDep(Department department);
     public int updateDep(Department department);
 }
-​```
+```
 
 
 
 ### 	c.mapper.xml
 
-​```xml
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -2320,7 +2319,7 @@ public interface DepartmentMapper {
 
     <insert id = "insertDep"> insert into department(departmentName)  values(#{departmentName})</insert>
 </mapper>
-​```
+```
 
 
 
@@ -2328,11 +2327,11 @@ public interface DepartmentMapper {
 
 ### 	d.application.properties
 
-​```properties
+```properties
 #mybatis相关配置
 mybatis.configuration.map-underscore-to-camel-case=true
 mybatis.mapper-locations=classpath:mybatis/mapperXml/*.xml
-​```
+```
 
 
 
@@ -2354,17 +2353,17 @@ mybatis.mapper-locations=classpath:mybatis/mapperXml/*.xml
 
 ## 1.SpringApplication 
 
-​```java
+```java
 public static ConfigurableApplicationContext run(Class<?>[] primarySources, String[] args) {
    return new SpringApplication(primarySources).run(args);
 }
-​```
+```
 
 
 
 ### 		a. new SpringApplication ()
 
-​```java
+```java
 #构造函数，判断是普通项目还是web项目
 public SpringApplication(ResourceLoader resourceLoader, Class<?>... primarySources) {
     //保存主配置类
@@ -2381,13 +2380,13 @@ public SpringApplication(ResourceLoader resourceLoader, Class<?>... primarySourc
     //决定哪个class 是主程序
     this.mainApplicationClass = deduceMainApplicationClass();
 }
-​```
+```
 
 
 
 ### b.   ConfigurableApplicationContext  run()方法的运行
 
-​```java
+```java
 public ConfigurableApplicationContext run(String... args) {
    StopWatch stopWatch = new StopWatch();
    stopWatch.start();
@@ -2442,7 +2441,7 @@ public ConfigurableApplicationContext run(String... args) {
     //返回ioc容器
    return context;
 }
-​```
+```
 
 
 
@@ -2459,7 +2458,7 @@ stater：
 1.  这个场景需要的依赖是什么
 2.  如何编写
 
-​```java
+```java
 @Configuration    //指定是一个配置类
 @ConditionalOnXXX  //在指定条件成立的情况下自动配置生效
 @AutoConfigureAfter   //指定自动配置类的顺序
@@ -2470,7 +2469,7 @@ stater：
 
 将自动配置类配置在
     META-INF/spring.factories
-​```
+```
 
 3.  模式：
 
@@ -2486,7 +2485,7 @@ stater：
 
 ## 1.my-spring-boot-stater
 
-​```xml
+```xml
 <dependencies>
     <dependency>
         <!--引入自动配置模块-->
@@ -2495,13 +2494,13 @@ stater：
         <version>0.0.1-SNAPSHOT</version>
     </dependency	>
 </dependencies>
-​```
+```
 
 
 
 ## 2.my-spring-boot-stater-autoconfig
 
-​```xml
+```xml
 <parent>
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-starter-parent</artifactId>
@@ -2525,13 +2524,13 @@ stater：
       <artifactId>spring-boot-starter</artifactId>
    </dependency>
 </dependencies>
-​```
+```
 
 ![image-20200811163708621](https://gitee.com/likeloveC/picture_bed/raw/master/img/8.26/20200829131009.png)
 
 myserivce
 
-​```java
+```java
 public class myService {
     myProperties myProperties;
     public com.lk.stater.myProperties getMyProperties() {
@@ -2545,11 +2544,11 @@ public class myService {
         return myProperties.getPrefix() + "-" + name + myProperties.getSuffix();
     }
 }
-​```
+```
 
 myproperties
 
-​```java
+```java
 @ConfigurationProperties(prefix = "lk.my")
 public class myProperties {
    private String prefix;
@@ -2567,11 +2566,11 @@ public class myProperties {
         this.suffix = suffix;
     }
 }
-​```
+```
 
 aotoconfig
 
-​```java
+```java
 @Configuration
 @ConditionalOnWebApplication
 @EnableConfigurationProperties (myProperties.class)
@@ -2587,14 +2586,14 @@ public class myServiceAutoConfiguration {
         return service;
     }
 }
-​```
+```
 
 spring.factories
 
-​```properties
+```properties
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.lk.stater.myServiceAutoConfiguration
-​```
+```
 
 
 
@@ -2606,17 +2605,17 @@ com.lk.stater.myServiceAutoConfiguration
 
 引入依赖
 
-​```xml
+```xml
 <dependency>
     <groupId>com.lk</groupId>
     <artifactId>my-spring-boot-stater</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 </dependency>
-​```
+```
 
 controller
 
-​```java
+```java
 @RestController
 public class controller {
     @Autowired
@@ -2628,6 +2627,11 @@ public class controller {
         return service.hello("like");
     }
 }
-​```
 ```
 
+properties
+
+```properties
+lk.my.prefix=欢迎
+lk.my.suffix=进入
+```
